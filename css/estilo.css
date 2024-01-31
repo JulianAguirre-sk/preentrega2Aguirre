@@ -109,3 +109,72 @@
 .logo__pie {
     width: 70%;
 }
+
+/* SERVICIOS */
+
+.under__titulo {
+    text-decoration: underline;
+    text-decoration-color: hsl(32, 100%, 50%);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8) ;
+}
+
+.contenedor__infoServicios {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: hsl(0, 11%, 95%);
+    justify-content: center;
+    gap: 50px;
+    margin-top: 60px;
+    padding: 0px 0px 110px 0px;
+}
+
+.texto__infoServicios {
+    padding: 50px 30px;
+}
+
+.texto__infoServicios h3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.imagen__infoServicios img {
+    width: 100%;;
+}
+
+.extra__infoServicios {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.extra__infoServicios h3 {
+    text-align: center;
+}
+
+.lista__infoServicios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10%;
+    padding: 10px 30px;
+}
+
+.item__infoServicios {
+    display: flex;
+    align-items: center;
+}
+
+.item__infoServicios img {
+    width: 4%;
+    height: 16px;
+}
+
+.item__infoServicios h4 {
+    font-size: 1em;
+}
+
+.margin__pie {
+    margin-top: 20%;
+}
