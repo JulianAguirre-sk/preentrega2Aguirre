@@ -1,0 +1,45 @@
+@import "../base/variables";
+
+.contenedor__portada {
+    position: relative;
+    display: flex;
+    height: 102vh;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 10px solid $color-secundario;
+    .texto__portada {
+        position: absolute;
+        text-align: center; 
+        color: white;
+        .titulo__portada {
+            font-size: 3.5em;
+            line-height: 1.2em;
+            font-weight: 500;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+            .extra__portada {
+                font-size: .5em;
+                line-height: 2.5em;
+                font-weight: 600;
+                display: block;
+            }
+        }
+        .comentario__portada {
+            font-size: 1em;
+            width: 50%;
+            margin-left: 25%;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+        }
+    }
+    .banner__portada {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+}
+
+.component__portada {
+    height: 60vh;
+}

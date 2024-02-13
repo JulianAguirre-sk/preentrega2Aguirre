@@ -1,0 +1,24 @@
+@import "../base/variables";
+
+@mixin gridMobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: 10%;
+}
+
+@mixin separador {
+    width: 45%;
+    height: 3px;
+    background-color: $color-principal;
+    margin: 0;
+}
+
+@mixin separadorDos {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(185, 185, 185);
+    margin: 0;
+}

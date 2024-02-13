@@ -1,0 +1,30 @@
+@import "../base/mixin";
+@import "../base/variables";
+
+.contenedor__novedades {
+    @include gridMobile;
+    margin-top: 100px;
+    gap: 80px;
+    .item__novedades{
+        @include gridMobile;
+        text-align: left;
+        padding: 0 18px;
+        gap: 10px;
+        img {
+            width: 100%;
+            height: 200px;
+        }
+        .item__fecha {
+            width: 100%;
+            color: $color-principal;
+        }
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: $color-secundario;
+        }
+        div {
+            @include separadorDos
+        }
+    }
+}

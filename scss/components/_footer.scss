@@ -1,0 +1,16 @@
+@import "../base/mixin";
+
+.contenedor__pie {
+    @include gridMobile;
+    margin-top: 60%;
+    .separador__pie {
+        @include separador;
+    }
+    .logo__pie {
+        width: 70%;
+    }
+}
+
+.servicios__pie {
+    margin-top: 20%;
+}

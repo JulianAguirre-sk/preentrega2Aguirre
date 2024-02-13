@@ -1,0 +1,20 @@
+@import "../base/variables";
+@import "../base/mixin";
+
+.contenedor__industrias {
+   @include gridMobile;
+    margin-top: 15%;
+    .separador__industrias {
+        @include separador;
+    }
+    .titulo__industrias {
+        font-size: 3em;
+        font-weight: 700;
+    }
+    .item__industrias {
+        h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+    }
+}
