@@ -28,6 +28,7 @@
             border-radius: 20px;
             border: 0;
             box-shadow: 0 0 20px rgba(0, 0, 8, 0.2);
+            resize: none;
         }
     }
     .btn {
@@ -37,5 +38,41 @@
         width: 150px;
         border-radius: 16px;
         box-shadow: 0 0 20px rgba(0, 0, 8, 0.2);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .contenedor__contacto {
+        width: 60vw;
+        height: 80vw;
+        margin-left: 20vw;
+        margin-top: 100px;
+        div {
+            input, textarea {
+                width: 380px;
+            }
+        }
+        .btn {
+            height: 6vw;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .contenedor__contacto {
+        gap: 80px;
+        h2 {
+            margin-top: 50px;
+        }
+        div {
+            width: 80%;
+            gap: 0;
+            input, textarea {
+                width: 100%;
+            }
+        }
+        .btn {
+            height: 50%;
+        }
     }
 }

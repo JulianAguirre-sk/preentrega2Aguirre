@@ -14,3 +14,21 @@
 .servicios__pie {
     margin-top: 20%;
 }
+
+@media screen and (min-width: 600px){
+    .contenedor__pie {
+        margin-top: 20%;
+        .logo__pie {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .contenedor__pie {
+        margin-top: 10%;
+        .logo__pie {
+            width: 15%;
+        }
+    }
+}

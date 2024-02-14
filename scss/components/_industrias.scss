@@ -18,3 +18,44 @@
         }
     }
 }
+
+@media screen and (min-width:600px){
+    .contenedor__industrias {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+        .separador__industrias{
+            grid-column: span 2;
+        }
+        .titulo__industrias {
+            grid-column: span 2;
+        }
+        .item__industrias{
+            width: 100%;
+            img {
+                width: 35%;
+            }
+            h3 {
+                font-size: 1.6rem;
+                width: 100%;
+            }
+        }
+        .petroquimica__item {
+            grid-column: span 2;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .contenedor__industrias {
+        gap: 70px;
+        .item__industrias {
+            img {
+                width: 15%;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+        }
+    }
+}

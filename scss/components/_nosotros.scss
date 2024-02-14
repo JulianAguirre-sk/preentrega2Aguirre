@@ -54,3 +54,13 @@
         }
     }
 }
+
+@media screen and (min-width: 1201px) {
+    .contenedor__nosotros {
+        .detalle__nosotros {
+            .tarjeta__nosotros {
+                width: 70vw;
+            }
+        }
+    }
+}

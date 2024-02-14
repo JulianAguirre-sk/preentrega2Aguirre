@@ -12,6 +12,7 @@
 @mixin separador {
     width: 45%;
     height: 3px;
+    border-radius: 2px;
     background-color: $color-principal;
     margin: 0;
 }

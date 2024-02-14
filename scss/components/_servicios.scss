@@ -49,3 +49,36 @@
         }
     }
 }
+
+@media screen and (min-Width: 600px) {
+    .contenedor__infoServicios {
+        .extra__infoServicios {
+            h3 {
+                font-size: 1.5rem;
+                text-align: left;
+                margin-left: 30px;
+            }
+            .lista__infoServicios {
+                .item__infoServicios {
+                    img {
+                        width: 2%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .contenedor__infoServicios {
+        .extra__infoServicios {
+            .lista__infoServicios {
+                .item__infoServicios {
+                    img {
+                        width: 1%;
+                    }
+                }
+            }
+        }
+    }
+}
