@@ -13,10 +13,12 @@
         img {
             width: 100%;
             height: 200px;
+            object-fit: cover;
         }
         .item__fecha {
             width: 100%;
             color: $color-principal;
+            margin: 0;
         }
         h2 {
             font-size: 1.3rem;
@@ -32,16 +34,20 @@
 
 @media screen and (min-width: 600px) {
     .contenedor__novedades {
-        padding: 0px 20vw;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        padding: 0 24px;
+        .item__novedades {
+            padding: 24px 0;
+        }
     }
 }
 
 @media screen and (min-width: 1201px) {
     .contenedor__novedades {
-        .item__novedades {
-            img {
-                height: 100%;
-            }
-        }
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        padding: 0 68px;
     }
 }

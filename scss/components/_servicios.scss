@@ -3,12 +3,12 @@
     grid-template-columns: 1fr;
     background-color: hsl(0, 11%, 95%);
     justify-content: center;
-    gap: 50px;
+    gap: 0px;
     margin-top: 60px;
     padding: 0px 0px 110px 0px;
     .texto__infoServicios {
         padding: 50px 30px;
-        h3 {
+        h2 {
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
@@ -17,14 +17,13 @@
         }
     }
     .imagen__infoServicios {
-        img {
-            width: 100%;;
-        }
+        width: 100%;;
     }
     .extra__infoServicios {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
+        padding-top: 50px ;
         h3 {
             text-align: center;
             font-size: 100%;
@@ -71,11 +70,26 @@
 
 @media screen and (min-width: 1201px) {
     .contenedor__infoServicios {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        align-content: center;
+        gap: 20px;
+        padding: 0;
+        .texto__resaltado {
+            font-weight: 400;
+        }
+        .imagen__infoServicios {
+            height: 300px;
+            object-fit: cover;
+        }
         .extra__infoServicios {
+            padding: 0;
             .lista__infoServicios {
+                gap: 10px;
                 .item__infoServicios {
                     img {
-                        width: 1%;
+                        width: 3%;
                     }
                 }
             }

@@ -7,7 +7,7 @@
 
 .edit-nav {
   background-color: white;
-  padding-bottom: 0;
+  padding: 0;
   border-bottom: 1px solid hsl(32, 98%, 50%);
 }
 .edit-nav div {
@@ -52,6 +52,26 @@
   }
   .edit-nav div .edit-list ul li a {
     color: #0056b8;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  .edit-nav div .edit-list ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: hsl(32, 98%, 50%);
+    width: 80%;
+    height: 2.2px;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scaleX(0);
+    transform-origin: bottom center;
+    transition: transform 0.4s ease-out;
+  }
+  .edit-nav div .edit-list ul li a:hover:after {
+    transform: scaleX(1);
   }
 }
 .contenedor__portada {
@@ -67,12 +87,12 @@
   position: absolute;
   text-align: center;
   color: white;
+  z-index: 1;
 }
 .contenedor__portada .texto__portada .titulo__portada {
   font-size: 3.5em;
   line-height: 1.2em;
   font-weight: 500;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
 }
 .contenedor__portada .texto__portada .titulo__portada .extra__portada {
   font-size: 0.5em;
@@ -84,7 +104,14 @@
   font-size: 1em;
   width: 50%;
   margin-left: 25%;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+}
+.contenedor__portada .filtro__portada {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 .contenedor__portada .banner__portada {
   width: 100%;
@@ -94,9 +121,28 @@
 
 .component__portada {
   height: 60vh;
+  justify-content: left;
+}
+.component__portada .under__texto {
+  text-align: left;
+  padding: 0 30px;
+}
+.component__portada .under__texto .under__titulo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+.component__portada .under__texto .under__titulo::after {
+  content: "";
+  width: 85%;
+  height: 5px;
+  background-color: hsl(32, 98%, 50%);
+  position: absolute;
+  left: 1px;
+  top: -20px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 819px) {
   .contenedor__portada .texto__portada {
     text-align: left;
   }
@@ -113,6 +159,21 @@
     margin-left: 0;
     font-size: 1.2rem;
   }
+  .component__portada {
+    height: 40vh;
+  }
+  .component__portada .under__texto .under__titulo {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .component__portada {
+    height: 70vh;
+  }
+  .component__portada .banner__posicion {
+    object-position: 0 25%;
+  }
 }
 .contenedor__industrias {
   display: grid;
@@ -121,14 +182,16 @@
   justify-items: center;
   text-align: center;
   gap: 10%;
-  margin-top: 15%;
+  margin-top: 50px;
+  gap: 30px;
 }
 .contenedor__industrias .separador__industrias {
-  width: 45%;
-  height: 3px;
+  width: 185px;
+  height: 5px;
   border-radius: 2px;
   background-color: hsl(32, 98%, 50%);
   margin: 0;
+  align-self: end;
 }
 .contenedor__industrias .titulo__industrias {
   font-size: 3em;
@@ -166,9 +229,6 @@
   }
 }
 @media screen and (min-width: 1201px) {
-  .contenedor__industrias {
-    gap: 70px;
-  }
   .contenedor__industrias .item__industrias img {
     width: 15%;
   }
@@ -183,37 +243,67 @@
   justify-items: center;
   text-align: center;
   gap: 10%;
-  margin-top: 60%;
-}
-.contenedor__pie .separador__pie {
-  width: 45%;
-  height: 3px;
-  border-radius: 2px;
-  background-color: hsl(32, 98%, 50%);
-  margin: 0;
+  margin-top: 80px;
+  background-color: #0056b8;
+  gap: 30px;
+  padding-top: 30px;
 }
 .contenedor__pie .logo__pie {
-  width: 70%;
+  width: 50%;
+  background-color: white;
+  border-radius: 30px 30px 30px 30px;
 }
-
-.servicios__pie {
-  margin-top: 20%;
+.contenedor__pie .redes__pie {
+  width: 100%;
+}
+.contenedor__pie .ubicacion__pie {
+  color: white;
+}
+.contenedor__pie .ubicacion__pie img {
+  width: 80px;
+}
+.contenedor__pie .ubicacion__pie p {
+  font-size: 13px;
+  padding: 0 70px;
 }
 
 @media screen and (min-width: 600px) {
   .contenedor__pie {
-    margin-top: 20%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    align-items: center;
   }
   .contenedor__pie .logo__pie {
-    width: 50%;
+    width: 25%;
+    grid-column: span 2;
+  }
+  .contenedor__pie .ubicacion__pie img {
+    width: 60px;
+  }
+  .contenedor__pie .ubicacion__pie p {
+    padding: 0 10%;
   }
 }
 @media screen and (min-width: 1201px) {
   .contenedor__pie {
-    margin-top: 10%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "redes logo ubicacion";
   }
   .contenedor__pie .logo__pie {
-    width: 15%;
+    width: 45%;
+    grid-column: span 1;
+    grid-area: logo;
+  }
+  .contenedor__pie .redes__pie {
+    grid-area: redes;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 30px;
+  }
+  .contenedor__pie .ubicacion__pie {
+    grid-area: ubicacion;
   }
 }
 .contenedor__infoServicios {
@@ -221,27 +311,28 @@
   grid-template-columns: 1fr;
   background-color: hsl(0, 11%, 95%);
   justify-content: center;
-  gap: 50px;
+  gap: 0px;
   margin-top: 60px;
   padding: 0px 0px 110px 0px;
 }
 .contenedor__infoServicios .texto__infoServicios {
   padding: 50px 30px;
 }
-.contenedor__infoServicios .texto__infoServicios h3 {
+.contenedor__infoServicios .texto__infoServicios h2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
   font-size: 1em;
   font-weight: 700;
 }
-.contenedor__infoServicios .imagen__infoServicios img {
+.contenedor__infoServicios .imagen__infoServicios {
   width: 100%;
 }
 .contenedor__infoServicios .extra__infoServicios {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  padding-top: 50px;
 }
 .contenedor__infoServicios .extra__infoServicios h3 {
   text-align: center;
@@ -277,8 +368,29 @@
   }
 }
 @media screen and (min-width: 1201px) {
+  .contenedor__infoServicios {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    padding: 0;
+  }
+  .contenedor__infoServicios .texto__resaltado {
+    font-weight: 400;
+  }
+  .contenedor__infoServicios .imagen__infoServicios {
+    height: 300px;
+    object-fit: cover;
+  }
+  .contenedor__infoServicios .extra__infoServicios {
+    padding: 0;
+  }
+  .contenedor__infoServicios .extra__infoServicios .lista__infoServicios {
+    gap: 10px;
+  }
   .contenedor__infoServicios .extra__infoServicios .lista__infoServicios .item__infoServicios img {
-    width: 1%;
+    width: 3%;
   }
 }
 .contenedor__novedades {
@@ -305,10 +417,12 @@
 .contenedor__novedades .item__novedades img {
   width: 100%;
   height: 200px;
+  object-fit: cover;
 }
 .contenedor__novedades .item__novedades .item__fecha {
   width: 100%;
   color: hsl(32, 98%, 50%);
+  margin: 0;
 }
 .contenedor__novedades .item__novedades h2 {
   font-size: 1.3rem;
@@ -325,12 +439,20 @@
 
 @media screen and (min-width: 600px) {
   .contenedor__novedades {
-    padding: 0px 20vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    padding: 0 24px;
+  }
+  .contenedor__novedades .item__novedades {
+    padding: 24px 0;
   }
 }
 @media screen and (min-width: 1201px) {
-  .contenedor__novedades .item__novedades img {
-    height: 100%;
+  .contenedor__novedades {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0 68px;
   }
 }
 .contenedor__nosotros {
@@ -417,9 +539,23 @@
   gap: 10px;
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 600px) {
+  .contenedor__nosotros .detalle__nosotros {
+    grid-template-columns: 1fr 1fr;
+  }
   .contenedor__nosotros .detalle__nosotros .tarjeta__nosotros {
-    width: 70vw;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .contenedor__nosotros .detalle__nosotros {
+    padding: 0 90px;
+  }
+  .contenedor__nosotros .detalle__nosotros .tarjeta__nosotros {
+    transition: all 0.3s ease-in-out;
+  }
+  .contenedor__nosotros .detalle__nosotros .tarjeta__nosotros:hover {
+    background-color: #012a58;
   }
 }
 .contenedor__contacto {
@@ -454,6 +590,7 @@
 .contenedor__contacto div label {
   width: 100%;
   font-weight: 600;
+  color: #0056b8;
 }
 .contenedor__contacto div input, .contenedor__contacto div textarea {
   width: 280px;

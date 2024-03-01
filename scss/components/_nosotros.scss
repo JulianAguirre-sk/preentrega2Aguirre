@@ -55,12 +55,28 @@
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 600px) {
     .contenedor__nosotros {
         .detalle__nosotros {
+            grid-template-columns: 1fr 1fr;
             .tarjeta__nosotros {
-                width: 70vw;
+                width: 100%;
             }
         }
     }
 }
+
+@media screen and (min-width: 1201px) {
+    .contenedor__nosotros {
+        .detalle__nosotros {
+            padding: 0 90px;
+            .tarjeta__nosotros {
+                transition: all 0.3s ease-in-out;
+            }
+            .tarjeta__nosotros:hover {
+                background-color: #012a58;
+            }
+        }
+    }
+}
+

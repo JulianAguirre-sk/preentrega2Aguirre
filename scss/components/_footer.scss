@@ -1,34 +1,71 @@
 @import "../base/mixin";
+@import "../base/variables";
 
 .contenedor__pie {
     @include gridMobile;
-    margin-top: 60%;
-    .separador__pie {
-        @include separador;
-    }
+    margin-top: 80px;
+    background-color: $color-secundario;
+    gap: 30px;
+    padding-top: 30px;
     .logo__pie {
-        width: 70%;
+        width: 50%;
+        background-color: white;
+        border-radius: 30px 30px 30px 30px;
     }
-}
-
-.servicios__pie {
-    margin-top: 20%;
-}
-
-@media screen and (min-width: 600px){
-    .contenedor__pie {
-        margin-top: 20%;
-        .logo__pie {
-            width: 50%;
+    .redes__pie {
+        width: 100%;
+    }
+    .ubicacion__pie {
+        color: white;
+        img {
+            width: 80px;
+        }
+        p{
+            font-size: 13px;
+            padding: 0 70px;
         }
     }
+}
+
+@media screen and (min-width: 600px) {
+.contenedor__pie {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    align-items: center;
+    .logo__pie {
+        width: 25%;
+        grid-column: span 2;
+    }
+    .ubicacion__pie {
+        img {
+            width: 60px;
+        }
+        p {
+            padding: 0 10%;
+        }
+    }
+}
 }
 
 @media screen and (min-width: 1201px) {
-    .contenedor__pie {
-        margin-top: 10%;
-        .logo__pie {
-            width: 15%;
-        }
+.contenedor__pie {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "redes logo ubicacion";
+    .logo__pie {
+        width: 45%;
+        grid-column: span 1;
+        grid-area: logo;
     }
+    .redes__pie {
+        grid-area: redes;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 30px;
+    }
+    .ubicacion__pie {
+        grid-area: ubicacion;
+    }
+}    
 }

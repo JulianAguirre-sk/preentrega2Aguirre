@@ -3,9 +3,11 @@
 
 .contenedor__industrias {
    @include gridMobile;
-    margin-top: 15%;
+    margin-top: 50px;
+    gap: 30px;
     .separador__industrias {
         @include separador;
+        align-self: end;
     }
     .titulo__industrias {
         font-size: 3em;
@@ -48,7 +50,6 @@
 
 @media screen and (min-width: 1201px) {
     .contenedor__industrias {
-        gap: 70px;
         .item__industrias {
             img {
                 width: 15%;
